@@ -4,7 +4,7 @@
 
 First you have to change project name.
 
-When you use VS-Code, you can bulk change on `Shift + Command + F` and search `<gcp-template>` then change to your project name.
+When you use VS-Code, you can bulk change on `Shift + Command + F` and search `gcp-template` then change to your project name.
 
 Next, you should ready secret key when you use firebase in server side project.
 

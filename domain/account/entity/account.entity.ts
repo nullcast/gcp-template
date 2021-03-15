@@ -5,11 +5,14 @@ import { AccountAuthority } from '../value/account-authority.value';
 import { AccountEmail } from '../value/account-email.value';
 import { AccountId } from '../value/account-id.value';
 import { AccountName } from '../value/account-name.value';
+import { AccountUid } from '../value/account-uid.value';
 import { Column, getColumns } from '../../../utility/decorator/entity/column.decorator';
 
 export class Account implements Entity {
   @Column()
   readonly id: AccountId;
+  @Column()
+  uid: AccountUid;
   @Column()
   email: AccountEmail;
   @Column()

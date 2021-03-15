@@ -1,4 +1,4 @@
 export interface CredentialRequest {
-  serviceId: string;
+  appId: string;
   secret: string;
 }

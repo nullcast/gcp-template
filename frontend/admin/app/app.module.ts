@@ -23,7 +23,6 @@ import { ModalComponent } from './component/modal/modal.component';
 import { CheckboxGroupComponent } from './component/molecule/checkbox-group/checkbox-group.component';
 import { RadioGroupComponent } from './component/molecule/radio-group/radio-group.component';
 
-import { BatchComponent } from './admin/component/page/batch/batch.component';
 import { FormComponent } from './component/page/form/form.component';
 import { IndexComponent } from './component/page/index/index.component';
 import { ModalLayoutComponent } from './component/template/modal-layout/modal-layout.component';
@@ -45,8 +44,7 @@ import { SentryService } from './service/sentry.service';
     CheckboxComponent,
     ModalComponent,
     ModalLayoutComponent,
-    OptionComponent,
-    BatchComponent
+    OptionComponent
   ],
   imports: [
     BrowserModule,

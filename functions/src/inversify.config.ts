@@ -4,14 +4,8 @@ import { BigQuery } from '@google-cloud/bigquery';
 import { PubSub } from '@google-cloud/pubsub';
 import * as admin from 'firebase-admin';
 import { Container, decorate, injectable } from 'inversify';
-import {
-  ChildFirestoreRepository,
-  IChildRepository,
-  IUserRepository,
-  UserBigQueryRepository,
-  UserFirestoreRepository
-} from '../../domain/user/repository';
-import { UserDomainService } from '../../domain/user/service/user-domain.service';
+import { IAccountRepository, AccountFirestoreRepository } from '../../domain/account/repository';
+import { AccountDomainService } from '../../domain/account/service/account-domain.service';
 import { IBigQueryService } from '../../lib/gcp/service/bigquery.service';
 import { IFirestoreService } from '../../lib/gcp/service/firestore.service';
 import { IRepository } from '../../utility/repository/repository';
@@ -22,12 +16,9 @@ import { TYPES } from './types';
 decorate(injectable(), IFirestoreService);
 decorate(injectable(), IBigQueryService);
 decorate(injectable(), IRepository);
-decorate(injectable(), IChildRepository);
-decorate(injectable(), IUserRepository);
-decorate(injectable(), UserFirestoreRepository);
-decorate(injectable(), ChildFirestoreRepository);
-decorate(injectable(), UserBigQueryRepository);
-decorate(injectable(), UserDomainService);
+decorate(injectable(), IAccountRepository);
+decorate(injectable(), AccountFirestoreRepository);
+decorate(injectable(), AccountDomainService);
 
 const container = new Container();
 
@@ -45,13 +36,9 @@ container.bind<IFirestoreService>(IFirestoreService).toConstantValue(new Firesto
 container.bind<IBigQueryService>(IBigQueryService).toConstantValue(new BigQueryService(container.get(BigQuery)));
 
 // Repository
-container.bind<IUserRepository>(IUserRepository).toConstantValue(new UserFirestoreRepository(container.get(IFirestoreService)));
-container.bind<IChildRepository>(IChildRepository).toConstantValue(new ChildFirestoreRepository(container.get(IFirestoreService)));
-container.bind(TYPES.USER_BIGQUERY_REPOSITORY).toConstantValue(new UserBigQueryRepository(container.get(IBigQueryService)));
+container.bind<IAccountRepository>(IAccountRepository).toConstantValue(new AccountFirestoreRepository(container.get(IFirestoreService)));
 
 // DomainService
-container
-  .bind<UserDomainService>(UserDomainService)
-  .toConstantValue(new UserDomainService(container.get(IUserRepository), container.get(IChildRepository)));
+container.bind<AccountDomainService>(AccountDomainService).toConstantValue(new AccountDomainService(container.get(IAccountRepository)));
 
 export default container;

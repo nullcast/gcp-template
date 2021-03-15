@@ -10,11 +10,11 @@ import { IFirestoreService } from '../../lib/gcp/service/firestore.service';
 import { FirestoreService } from './service/gcp/firestore.service';
 import { TYPES } from './types';
 
-const serviceAccount = require('./.keys/<gcp-template>-firebase-adminsdk-5tvia-27c69fe9db.json');
+const serviceAccount = require('./.keys/gcp-template-firebase-adminsdk-5tvia-27c69fe9db.json');
 const app = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  storageBucket: '<gcp-template>.appspot.com',
-  databaseURL: 'https://<gcp-template>.firebaseio.com'
+  storageBucket: 'gcp-template.appspot.com',
+  databaseURL: 'https://gcp-template.firebaseio.com'
 });
 const firestoreClient = app.firestore();
 

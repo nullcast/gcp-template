@@ -5,7 +5,7 @@
   },
   "hosting": [
     {
-      "target": "<gcp-template>",
+      "target": "gcp-template",
       "public": "dist",
       "ignore": [
         "firebase.json",

@@ -1,18 +1,21 @@
 {
-  "name": "<gcp-template>",
+  "name": "gcp-template",
   "version": "0.0.0",
   "author": "Masaki Kurosawa",
   "scripts": {
     "reimport": "yarn clean:npm && yarn install --check-files -W",
     "clean:npm": "find . -name 'node_modules' -type d -exec rm -rf '{}' +",
-    "docker:build:sandbox": "docker build --tag asia.gcr.io/<gcp-template>/sandbox:v0.0.0 .",
-    "docker:push:sandbox": "gcloud docker -- push asia.gcr.io/<gcp-template>/sandbox:v0.0.0",
-    "docs:domain": "yarn workspace domain docs",
     "deploy:hosting": "firebase deploy --only hosting",
     "deploy": "firebase deploy --only hosting,firestore:rules",
+    "test": "jest",
     "lint:functions": "yarn workspace functions lint",
+    "build:docs:domain": "yarn workspace domain docs",
     "build:functions": "yarn workspace functions build",
+    "build:frontend:admin": "yarn workspace frontend build:admin",
+    "build:serverside:sandbox": "docker build --tag asia.gcr.io/gcp-template/sandbox:v0.0.0 .",
     "deploy:functions": "firebase deploy --only functions",
+    "deploy:serverside:sandbox": "gcloud docker -- push asia.gcr.io/gcp-template/sandbox:v0.0.0",
+    "start:frontend:admin": "yarn workspace frontend start:admin",
     "start:frontend:local-batch": "yarn workspace frontend start:local-batch",
     "start:serverside:sandbox": "yarn workspace sandbox tsoa:init && yarn workspace sandbox start"
   },
@@ -36,7 +39,7 @@
     "mocha": "^8.2.1",
     "reflect-metadata": "^0.1.13",
     "typedoc": "^0.20.20",
-    "typescript": "^4.1.3"
+    "typescript": "4.1.3"
   },
   "devDependencies": {
     "@types/faker": "^5.1.6",
