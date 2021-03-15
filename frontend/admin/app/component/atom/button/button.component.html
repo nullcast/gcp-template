@@ -1,0 +1,6 @@
+<div class="button" [ngClass]="{ '-flat': type === 'flat', '-disabled': disabled }">
+  <p class="button__popup" *ngIf="popup">{{ popup }}</p>
+  <p class="button__button" (click)="click()">
+    <ng-content></ng-content>
+  </p>
+</div>

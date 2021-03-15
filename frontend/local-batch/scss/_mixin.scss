@@ -1,0 +1,44 @@
+@mixin pc-only() {
+  @media only screen and (min-width: 1144px) {
+    @content;
+  }
+}
+
+@mixin sp-only() {
+  @media only screen and (max-width: 1144px) {
+    @content;
+  }
+}
+
+@mixin block() {
+  display: block;
+  &[hidden] {
+    display: none;
+  }
+}
+
+@mixin not-first-child() {
+  ::ng-deep {
+    > * {
+      &:not(:first-child) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin label() {
+  margin-bottom: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: $grayColor;
+  &.-required {
+    &::after {
+      content: '*';
+      display: inline-block;
+      margin-left: 4px;
+      font-weight: bold;
+      color: $warningColor;
+    }
+  }
+}

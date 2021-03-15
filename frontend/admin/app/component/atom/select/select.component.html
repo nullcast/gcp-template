@@ -1,0 +1,13 @@
+<div class="select">
+  <p class="select__label" [class.-required]="required" *ngIf="label">{{ label }}</p>
+  <select
+    #select
+    [disabled]="!options.length || disabled"
+    [class.-error]="control.touched && control.invalid"
+    (change)="onChange(select.value)"
+    (blur)="onTouched(select.value)"
+  >
+    <option value="" *ngIf="blank !== null">{{ blank }}</option>
+    <option [value]="option.value" *ngFor="let option of options">{{ option.label }}</option>
+  </select>
+</div>

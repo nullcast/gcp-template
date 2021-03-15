@@ -1,0 +1,15 @@
+<div class="group">
+  <p class="group__label" [class.-required]="required" *ngIf="label">{{ label }}</p>
+  <div class="group__wrapper">
+    <div class="group__wrapper-list" *ngFor="let option of options">
+      <input
+        #radio
+        type="radio"
+        [name]="control.name"
+        [value]="option.value"
+        [id]="control.name + option.value"
+        (input)="onChange(radio.value)"
+      /><label [for]="control.name + option.value">{{ option.label }}</label>
+    </div>
+  </div>
+</div>

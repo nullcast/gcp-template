@@ -1,0 +1,42 @@
+@import '../../../scss/import.scss';
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  pointer-events: none;
+  &__filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(#203347, 0.4);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  &__content {
+    opacity: 0;
+    transform: scale(0.25);
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  &.-on & {
+    &__filter {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    &__content {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+  }
+}

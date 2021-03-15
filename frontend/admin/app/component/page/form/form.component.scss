@@ -1,0 +1,39 @@
+@import '../../../../scss/import.scss';
+
+.form {
+  padding: 40px 0;
+  &__wrapper {
+    width: $defaultWidth;
+    margin: 0 auto;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px $shadowColor;
+  }
+  &__wrapper-body {
+    padding: 20px;
+    > * {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+  }
+  &__wrapper-foot {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    border-top: 1px solid $borderColor;
+    > * {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+}
+.search {
+  display: flex;
+  align-items: flex-end;
+  > * {
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}

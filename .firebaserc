@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "<gcp-template>"
+  },
+  "targets": {
+    "<gcp-template>": {
+      "hosting": {
+        "<gcp-template>": [
+          "<gcp-template>"
+        ],
+        "system-admin-docs": [
+          "system-admin-docs"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "sandbox",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Masaki Kurosawa",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "tsoa:init": "yarn tsoa routes && yarn tsoa spec",
+    "dev": "echo \"Developing...\" && nodemon",
+    "start": "ts-node --project tsconfig.app.json index.ts",
+    "prettier": "prettier --ignore-path ../../.prettierignore --write './**/*.*'",
+    "tslint": "tslint './**/*.ts' --fix",
+    "lint": "yarn prettier && yarn tslint"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^4.9.4",
+    "@types/express": "^4.17.11",
+    "@types/inversify": "^2.0.33",
+    "@types/inversify-express-utils": "^2.0.0",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.30",
+    "@types/swagger-ui-express": "^4.1.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.5.0",
+    "inversify": "^5.0.5",
+    "inversify-binding-decorators": "^4.0.0",
+    "inversify-express-utils": "^6.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "swagger-ui-express": "^4.1.6",
+    "ts-node": "^9.1.1",
+    "tsoa": "^3.5.1"
+  },
+  "devDependencies": {}
+}

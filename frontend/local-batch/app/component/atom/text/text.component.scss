@@ -1,0 +1,24 @@
+@import '../../../../scss/import.scss';
+
+::ng-deep app-text {
+  display: block;
+}
+
+.text {
+  input {
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-family: $defaultFamily;
+    border: 1px solid $borderColor;
+    &.-error {
+      border-color: $warningColor;
+    }
+  }
+  &__label {
+    @include label;
+  }
+}

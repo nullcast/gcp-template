@@ -1,0 +1,67 @@
+@import '../../../../scss/import.scss';
+
+::ng-deep app-button {
+  display: table;
+}
+
+.button {
+  position: relative;
+  &__popup {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    line-height: 1.4;
+    padding: 6px 12px;
+    font-size: 12px;
+    text-align: center;
+    white-space: pre;
+    color: white;
+    background: #191919;
+    border-radius: 6px;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    z-index: 10;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+  &__button {
+    line-height: 30px;
+    padding: 0 18px;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    background: $brandColor;
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px $shadowColor;
+    transition: 0.3s;
+    cursor: pointer;
+    &::selection {
+      background: none;
+    }
+  }
+  &:hover & {
+    &__popup {
+      opacity: 1;
+    }
+  }
+  &.-flat & {
+    &__button {
+      color: #8f9cb1;
+      background: none;
+      box-shadow: none;
+      &:hover {
+        background: rgba(#8f9cb1, 0.08);
+      }
+    }
+  }
+  &.-disabled {
+    pointer-events: none;
+  }
+  &.-disabled & {
+    &__button {
+      background: #8f9cb1;
+      box-shadow: none;
+    }
+  }
+}

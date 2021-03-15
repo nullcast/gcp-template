@@ -1,0 +1,10 @@
+<div class="textarea">
+  <p class="textarea__label" [class.-required]="required" *ngIf="label">{{ label }}</p>
+  <textarea
+    #textarea
+    [class.-error]="control.touched && control.invalid"
+    [placeholder]="placeholder"
+    (input)="onChange(textarea.value)"
+    (blur)="onTouched(textarea.value)"
+  ></textarea>
+</div>

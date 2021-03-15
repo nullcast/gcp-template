@@ -1,0 +1,5 @@
+<div class="index" *ngIf="query.select() | async as state">
+  <app-button [disabled]="false" (clickButton)="generateSampleAccount()">generateSampleAccount</app-button>
+  <app-button [disabled]="false" (clickButton)="generateSampleUsers()">generateSampleUsers</app-button>
+  <app-button [disabled]="false" (clickButton)="generateSampleService()">generateSampleService</app-button>
+</div>

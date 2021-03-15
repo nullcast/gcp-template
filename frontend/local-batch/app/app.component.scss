@@ -1,0 +1,56 @@
+@import '../scss/import.scss';
+
+.app {
+  position: relative;
+  &__side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sideWidth;
+    height: 100vh;
+    background: white;
+    box-shadow: 0 3px 20px rgba(0, 36, 47, 0.1);
+    z-index: 10;
+  }
+  &__content {
+    position: relative;
+    margin-left: $sideWidth;
+    padding: 20px;
+    z-index: 1;
+  }
+}
+.logo {
+  padding: 24px 0;
+  a {
+    display: block;
+    line-height: 1;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: $brandColor;
+  }
+}
+.menu {
+  &__list {
+    display: block;
+    position: relative;
+    line-height: 60px;
+    padding-left: 52px;
+    font-weight: bold;
+    color: #5f6c72;
+    fa-duotone-icon {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 26px;
+      font-size: 23px;
+      text-align: center;
+    }
+    &.-on {
+      color: $brandColor;
+      background: rgba($brandColor, 0.13);
+    }
+  }
+}
+.account {
+}

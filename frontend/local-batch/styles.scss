@@ -1,0 +1,161 @@
+@import './scss/import';
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  color: $fontColor;
+  font-size: 14px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  font-family: $defaultFamily;
+  -webkit-font-smoothing: antialiased;
+  background: $backgroundColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  color: $fontColor;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+table {
+  border-spacing: 0;
+}
+
+th {
+  vertical-align: top;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0 8px;
+  th {
+    position: sticky;
+    top: 0;
+    padding: 10px 24px;
+    font-size: 12px;
+    color: $grayColor;
+    background: $backgroundColor;
+    z-index: 10;
+  }
+  td {
+    padding: 20px 24px;
+    line-height: 1.6;
+    white-space: nowrap;
+    background: white;
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    &.-wrap {
+      min-width: 500px;
+      white-space: pre-wrap;
+    }
+  }
+  a {
+    color: $brandColor;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    li {
+      &::before {
+        content: '・';
+      }
+    }
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
+    margin: 0 auto;
+  }
+}
+
+fa-icon {
+  .fa-trash {
+    color: $grayColor;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      color: $brandColor;
+    }
+  }
+  .fa-link {
+    margin-left: 6px;
+    color: $brandColor;
+  }
+}
+
+.u-pc-hide {
+  @include pc-only {
+    display: none !important;
+  }
+}
+.u-sp-hide {
+  @include sp-only {
+    display: none !important;
+  }
+}

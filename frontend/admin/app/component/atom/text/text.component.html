@@ -1,0 +1,10 @@
+<div class="text">
+  <p class="text__label" [class.-required]="required" *ngIf="label !== null">{{ label }}</p>
+  <input
+    #text
+    [placeholder]="placeholder"
+    [class.-error]="control.touched && control.invalid"
+    (input)="onChange(text.value)"
+    (blur)="onTouched(text.value)"
+  />
+</div>

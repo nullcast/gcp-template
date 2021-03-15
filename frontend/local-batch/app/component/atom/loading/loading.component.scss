@@ -1,0 +1,9 @@
+@import '../../../../scss/import.scss';
+
+.loading {
+  display: block;
+  text-align: center;
+  line-height: 1;
+  font-size: 40px;
+  color: $brandColor;
+}

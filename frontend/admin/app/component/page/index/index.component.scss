@@ -1,0 +1,7 @@
+@import '../../../../scss/import.scss';
+
+.index {
+  @include not-first-child {
+    margin-top: 20px;
+  }
+}

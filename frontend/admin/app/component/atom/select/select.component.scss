@@ -1,0 +1,39 @@
+@import '../../../../scss/import.scss';
+
+::ng-deep app-select {
+  display: block;
+}
+
+.select {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 17px;
+    right: 12px;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+  select {
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 12px;
+    padding-right: 27px;
+    font-size: 14px;
+    font-family: $defaultFamily;
+    border: 1px solid $borderColor;
+    cursor: pointer;
+    &.-error {
+      border-color: $warningColor;
+    }
+  }
+  &__label {
+    @include label;
+  }
+}

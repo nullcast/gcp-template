@@ -1,0 +1,20 @@
+<div class="modalLayout">
+  <p class="heading">
+    <ng-content select="[modal-header]"></ng-content>
+  </p>
+  <div class="loading" *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="content" [hidden]="loading">
+    <ng-content select="[modal-content]"></ng-content>
+  </div>
+  <div class="button">
+    <div class="button__wrapper">
+      <ng-content select="[modal-footer-left]"></ng-content>
+    </div>
+    <div class="button__wrapper">
+      <app-button type="flat" (clickButton)="close()">Cancel</app-button>
+      <ng-content select="[modal-footer-right]" *ngIf="!loading"></ng-content>
+    </div>
+  </div>
+</div>

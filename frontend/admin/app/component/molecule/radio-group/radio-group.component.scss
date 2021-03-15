@@ -1,0 +1,24 @@
+@import '../../../../scss/import.scss';
+
+::ng-deep app-radio-group {
+  display: block;
+}
+
+.group {
+  &__label {
+    @include label;
+  }
+  &__wrapper {
+  }
+  &__wrapper-list {
+    input,
+    label {
+      cursor: pointer;
+    }
+    label {
+      vertical-align: bottom;
+      line-height: 1.4;
+      margin-left: 4px;
+    }
+  }
+}

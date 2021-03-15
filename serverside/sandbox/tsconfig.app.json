@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["reflect-metadata"],
+    "strictPropertyInitialization": false,
+    "sourceMap": true,
+    "declaration": false,
+    "noImplicitReturns": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2018",
+    "lib": ["es2018"]
+  },
+  "exclude": ["../../node_modules"]
+}

@@ -1,0 +1,11 @@
+<div class="app" *ngIf="store$ | async as state">
+  <div class="app__side">
+    <div class="logo"><a routerLink="/">Local Batch</a></div>
+    <div class="menu"> </div>
+    <div class="account"></div>
+  </div>
+  <div class="app__content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-modal></app-modal>
+</div>
