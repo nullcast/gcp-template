@@ -13,3 +13,7 @@ Filename have to be `firebase-key.json` in .keys directory, serverside project.
 And when you use jwt also, you should create rsa credential set in same directory.
 
 Filename have to be `jwt-secret.rsa` and `jwt-secret.rsa.pub`.
+
+```
+$ ssh-keygen -t rsa -f ./serverside/sandbox/.keys/jwt-secret.rsa -b 1024 -m PEM
+```
